@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags (Akan diupdate dinamis oleh JS) -->
+    <title>Detail Artikel | Rido's Journal</title>
+    <meta name="description" content="Detail artikel di Rido's Creative & Tech Journal.">
+    <meta name="author" content="Rido Anugrah">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / LinkedIn) Meta Tags untuk Social Sharing -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Detail Artikel | Rido's Journal">
+    <meta property="og:description" content="Detail artikel di Rido's Creative & Tech Journal.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80">
+    <meta property="og:url" content="https://doxxy22.github.io/blog/article.html">
+
+    <!-- Twitter Cards Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Pemuatan CSS Icon (Font Awesome v6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Kustom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Animasi Loading Halaman -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigasi -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Logo Brand -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">R</div>
+                <span>Rido's</span> Journal
+            </a>
+
+            <!-- Navigasi Menu Desktop -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Aksi Tambahan: Tombol Dark Mode & Hamburger -->
+            <div class="nav-actions">
+                <!-- Tombol Toggle Light/Dark Mode -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Hamburger Menu untuk Mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Menu Utama">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER UTAMA DETAIL ARTIKEL (Renders dynamically based on ?id=X in URL) -->
+    <div id="single-article-root">
+        <!-- Loader / Fallback State -->
+        <div class="container" style="padding: 100px 0; text-align: center;">
+            <p style="color: var(--text-muted);">Memuat konten artikel...</p>
+        </div>
+    </div>
+
+    <!-- TOAST SUCCESS MODAL POPUP -->
+    <div id="toast-success" class="toast-success">
+        <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
+        <div>
+            <strong style="display: block;">Pesan Berhasil Terkirim!</strong>
+            <span style="font-size: 0.85rem; opacity: 0.9;">Pesan disimulasikan & event analitik terkirim ke GA4.</span>
+        </div>
+    </div>
+
+    <!-- Section Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom Brand & Bio Singkat -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-brand-logo">
+                        <div class="logo-icon" style="width: 28px; height: 28px; font-size: 0.95rem;">R</div>
+                        <span>Rido's</span> Journal
+                    </a>
+                    <p class="footer-brand-desc">
+                        Wadah berbagi cerita, tutorial pengembangan frontend, tips desain, editing video, dan cerita inspiratif perjalanan dunia perkuliahan IT.
+                    </p>
+                </div>
+
+                <!-- Kolom Navigasi Cepat -->
+                <div>
+                    <h4 class="footer-title">Navigasi Halaman</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog & Artikel</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Kontak / Hubungi Rido -->
+                <div>
+                    <h4 class="footer-title">Kontak & Media</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> ridoanugrah2209@gmail.com </span></li>
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-location-dot" style="width: 20px;"></i> Tangerang, Indonesia</span></li>
+                        <li>
+                            <div class="contact-socials" style="margin-top: 10px;">
+                                <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="hero-social-link social-track" data-platform="LinkedIn" aria-label="LinkedIn Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/doxxy22" target="_blank" class="hero-social-link social-track" data-platform="GitHub" aria-label="GitHub Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://instagram.com/angrhrido_" target="_blank" class="hero-social-link social-track" data-platform="Instagram" aria-label="Instagram Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom / Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rido's Creative & Tech Journal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/articles-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

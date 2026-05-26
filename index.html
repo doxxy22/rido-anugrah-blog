@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMWRCC604Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TMWRCC604Q');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags Dasar -->
+    <title>Rido's Creative & Tech Journal | Home</title>
+    <meta name="description" content="Selamat datang di jurnal kreatif dan teknologi Rido Anugrah. Membahas IT, frontend development, desain grafis, editing video, dan cerita kuliah.">
+    <meta name="author" content="Rido Anugrah">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / LinkedIn) Meta Tags untuk Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rido's Creative & Tech Journal | Home">
+    <meta property="og:description" content="Selamat datang di jurnal kreatif dan teknologi Rido Anugrah. Membahas IT, frontend development, desain grafis, editing video, dan cerita kuliah.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80">
+    <meta property="og:url" content="https://doxxy22.github.io/blog/">
+
+    <!-- Twitter Cards Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rido's Creative & Tech Journal | Home">
+    <meta name="twitter:description" content="Selamat datang di jurnal kreatif dan teknologi Rido Anugrah. Membahas IT, frontend development, desain grafis, editing video, dan cerita kuliah.">
+
+    <!-- Pemuatan CSS Icon (Font Awesome v6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Kustom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Animasi Loading Halaman -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigasi -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Logo Brand -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">R</div>
+                <span>Rido's</span> Journal
+            </a>
+
+            <!-- Navigasi Menu Desktop -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Aksi Tambahan: Tombol Dark Mode & Hamburger -->
+            <div class="nav-actions">
+                <!-- Tombol Toggle Light/Dark Mode -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Hamburger Menu untuk Mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Menu Utama">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-grid">
+            
+            <!-- Sisi Kiri: Social Media Quick Links (GA Tracked) -->
+            <div class="hero-socials reveal">
+                <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="hero-social-link social-track" data-platform="LinkedIn" aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/doxxy22" target="_blank" class="hero-social-link social-track" data-platform="GitHub" aria-label="GitHub Profile">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://instagram.com/angrhrido_" target="_blank" class="hero-social-link social-track" data-platform="Instagram" aria-label="Instagram Profile">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+            <!-- Sisi Tengah: Foto Profil Rido -->
+            <div class="hero-image-wrap reveal">
+                <div class="hero-image-container">
+                    <img src="assets/img/me.jpeg" alt="Foto Profil Rido Anugrah">
+                </div>
+            </div>
+
+            <!-- Sisi Kanan: Teks Perkenalan dan Tombol Aksi -->
+            <div class="hero-content reveal">
+                <span class="hero-hello">Hi, I am</span>
+                <h1 class="hero-name">Rido</h1>
+                <div class="hero-divider"></div>
+                <h2 class="hero-title">Frontend Developer & IT Student</h2>
+                <p class="hero-desc">
+                    Saya adalah mahasiswa Teknik Informatika semester 8 yang memiliki ketertarikan mendalam pada pengembangan antarmuka web (Frontend), desain grafis, dan editing video. Saat ini sedang berfokus menyelesaikan tugas akhir skripsi saya.
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Reach Me <i class="fa-solid fa-paper-plane"></i></a>
+                    <button id="download-cv-btn" class="btn btn-secondary">Download CV <i class="fa-solid fa-download"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: EXPERTISE / SPECIALTIES -->
+    <section class="services-section section-padding">
+        <div class="container">
+            
+            <div class="section-title-wrap reveal" style="text-align: center;">
+                <span class="section-subtitle">What I Do</span>
+                <h2 class="section-title">Bidang Minat & Keahlian</h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Bidang 1: Frontend Developer -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Frontend Developer</h3>
+                    <p class="service-desc">
+                        Membangun website yang cepat, interaktif, dan responsive menggunakan HTML, CSS, JavaScript, serta framework modern. Menitikberatkan kerapihan kode dan optimasi performa.
+                    </p>
+                </div>
+
+                <!-- Bidang 2: Graphic Designer -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="service-title">Graphic Designer</h3>
+                    <p class="service-desc">
+                        Merancang identitas visual, mockup antarmuka pengguna (UI/UX), dan materi promosi kreatif menggunakan alat bantu seperti Figma, Adobe Photoshop, dan Illustrator.
+                    </p>
+                </div>
+
+                <!-- Bidang 3: Video Editor -->
+                <div class="service-card reveal">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="service-title">Video Editor</h3>
+                    <p class="service-desc">
+                        Mengolah rekaman video mentah menjadi karya visual sinematik dengan pacing yang baik, color grading yang sesuai, serta desain audio yang dramatis di Premiere Pro.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: STATISTIK SEDERHANA WEBSITE -->
+    <section class="stats-section section-padding">
+        <div class="container stats-grid">
+            <!-- Stat 1: Halaman Terbaca -->
+            <div class="stat-item reveal">
+                <span class="stat-number">1.2K+</span>
+                <span class="stat-title">Simulated Views</span>
+            </div>
+            <!-- Stat 2: Artikel -->
+            <div class="stat-item reveal">
+                <span class="stat-number">5</span>
+                <span class="stat-title">Artikel Dummy</span>
+            </div>
+            <!-- Stat 3: Jam Koding -->
+            <div class="stat-item reveal">
+                <span class="stat-number">800+</span>
+                <span class="stat-title">Jam Koding</span>
+            </div>
+            <!-- Stat 4: Semester -->
+            <div class="stat-item reveal">
+                <span class="stat-number">8</span>
+                <span class="stat-title">Semester Aktif</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: DAFTAR ARTIKEL TERBARU -->
+    <section class="section-padding">
+        <div class="container">
+            
+            <div class="section-title-wrap reveal" style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                    <span class="section-subtitle">Blog Journal</span>
+                    <h2 class="section-title">Artikel Terbaru</h2>
+                </div>
+                <a href="blog.html" class="btn btn-secondary" style="margin-bottom: 5px;">Lihat Semua <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Diisi secara dinamis oleh JavaScript -->
+            <div class="articles-grid articles-grid-home"></div>
+
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom Brand & Bio Singkat -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-brand-logo">
+                        <div class="logo-icon" style="width: 28px; height: 28px; font-size: 0.95rem;">R</div>
+                        <span>Rido's</span> Journal
+                    </a>
+                    <p class="footer-brand-desc">
+                        Wadah berbagi cerita, tutorial pengembangan frontend, tips desain, editing video, dan cerita inspiratif perjalanan dunia perkuliahan IT.
+                    </p>
+                </div>
+
+                <!-- Kolom Navigasi Cepat -->
+                <div>
+                    <h4 class="footer-title">Navigasi Halaman</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog & Artikel</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Kontak / Hubungi Rido -->
+                <div>
+                    <h4 class="footer-title">Kontak & Media</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> ridoanugrah2209@gmail.com </span></li>
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-location-dot" style="width: 20px;"></i> Tangerang, Indonesia</span></li>
+                        <li>
+                            <div class="contact-socials" style="margin-top: 10px;">
+                                <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="hero-social-link social-track" data-platform="LinkedIn" aria-label="LinkedIn Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/doxxy22" target="_blank" class="hero-social-link social-track" data-platform="GitHub" aria-label="GitHub Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://instagram.com/angrhrido_" target="_blank" class="hero-social-link social-track" data-platform="Instagram" aria-label="Instagram Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom / Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rido's Creative & Tech Journal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/articles-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

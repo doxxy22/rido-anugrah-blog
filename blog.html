@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags Dasar -->
+    <title>Blog & Artikel | Rido's Creative & Tech Journal</title>
+    <meta name="description" content="Daftar artikel teknologi, tutorial coding frontend, tips desain grafis, editing video, dan cerita kuliah dari Rido Anugrah.">
+    <meta name="author" content="Rido Anugrah">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook / LinkedIn) Meta Tags untuk Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog & Artikel | Rido's Creative & Tech Journal">
+    <meta property="og:description" content="Daftar artikel teknologi, tutorial coding frontend, tips desain grafis, editing video, dan cerita kuliah dari Rido Anugrah.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80">
+    <meta property="og:url" content="https://doxxy22.github.io/blog/blog.html">
+
+    <!-- Twitter Cards Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog & Artikel | Rido's Creative & Tech Journal">
+    <meta name="twitter:description" content="Daftar artikel teknologi, tutorial coding frontend, tips desain grafis, editing video, dan cerita kuliah dari Rido Anugrah.">
+
+    <!-- Pemuatan CSS Icon (Font Awesome v6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Kustom -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Animasi Loading Halaman -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header & Navigasi -->
+    <header class="header">
+        <div class="container navbar">
+            <!-- Logo Brand -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">R</div>
+                <span>Rido's</span> Journal
+            </a>
+
+            <!-- Navigasi Menu Desktop -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Aksi Tambahan: Tombol Dark Mode & Hamburger -->
+            <div class="nav-actions">
+                <!-- Tombol Toggle Light/Dark Mode -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <!-- Hamburger Menu untuk Mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Menu Utama">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- FILTER & SEARCH BAR SECTION -->
+    <section class="blog-filters-section">
+        <div class="container search-filter-wrap">
+            
+            <!-- Formulir Pencarian Artikel (Live Search Client-Side) -->
+            <div class="search-form">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Cari judul atau isi artikel..." 
+                    class="search-input"
+                    aria-label="Cari Artikel"
+                >
+                <button class="search-button" aria-label="Kirim Pencarian" style="pointer-events: none;">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <!-- Kategori Tabs Navigasi -->
+            <div class="categories-tabs">
+                <button class="category-tab category-btn active" data-category="all">Semua Kategori</button>
+                <button class="category-tab category-btn" data-category="web">Web Development</button>
+                <button class="category-tab category-btn" data-category="design">Desain Grafis</button>
+                <button class="category-tab category-btn" data-category="video">Video Editing</button>
+                <button class="category-tab category-btn" data-category="kuliah">Pengalaman Kuliah</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ARTIKEL GRID SECTION -->
+    <main class="section-padding" style="background-color: var(--bg-primary);">
+        <div class="container">
+            
+            <!-- Keterangan Status Filter Pencarian -->
+            <div class="section-title-wrap reveal">
+                <span class="section-subtitle">Journal Entries</span>
+                <h1 class="section-title" id="blog-page-title">Seluruh Artikel</h1>
+            </div>
+
+            <!-- Grid Container (Renders dynamically) -->
+            <div class="articles-grid" id="articles-grid-all"></div>
+
+        </div>
+    </main>
+
+    <!-- Section Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Kolom Brand & Bio Singkat -->
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-brand-logo">
+                        <div class="logo-icon" style="width: 28px; height: 28px; font-size: 0.95rem;">R</div>
+                        <span>Rido's</span> Journal
+                    </a>
+                    <p class="footer-brand-desc">
+                        Wadah berbagi cerita, tutorial pengembangan frontend, tips desain, editing video, dan cerita inspiratif perjalanan dunia perkuliahan IT.
+                    </p>
+                </div>
+
+                <!-- Kolom Navigasi Cepat -->
+                <div>
+                    <h4 class="footer-title">Navigasi Halaman</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Home</a></li>
+                        <li><a href="about.html" class="footer-link">About</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog & Artikel</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Kontak / Hubungi Rido -->
+                <div>
+                    <h4 class="footer-title">Kontak & Media</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> ridoanugrah2209@gmail.com </span></li>
+                        <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-location-dot" style="width: 20px;"></i> Tangerang, Indonesia</span></li>
+                        <li>
+                            <div class="contact-socials" style="margin-top: 10px;">
+                                <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="hero-social-link social-track" data-platform="LinkedIn" aria-label="LinkedIn Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/doxxy22" target="_blank" class="hero-social-link social-track" data-platform="GitHub" aria-label="GitHub Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                                <a href="https://instagram.com/angrhrido_" target="_blank" class="hero-social-link social-track" data-platform="Instagram" aria-label="Instagram Profile" style="width: 36px; height: 36px; font-size: 1rem;">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom / Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rido's Creative & Tech Journal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="assets/js/articles-data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Tambahan live client-side search interaktif khusus halaman blog.html
+        document.getElementById('search-input').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const articlesArray = Object.values(articles);
+            const activeCategoryBtn = document.querySelector('.category-btn.active');
+            const categoryFilter = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
+
+            // Ambil elemen title
+            const pageTitle = document.getElementById('blog-page-title');
+            
+            const filtered = articlesArray.filter(art => {
+                const matchesCategory = categoryFilter === 'all' || art.category_slug === categoryFilter;
+                const matchesSearch = art.title.toLowerCase().includes(query) || art.summary.toLowerCase().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+
+            // Update title text
+            if (query !== '') {
+                pageTitle.textContent = `Pencarian: "${e.target.value}"`;
+            } else {
+                pageTitle.textContent = categoryFilter === 'all' ? 'Seluruh Artikel' : `Kategori: ${activeCategoryBtn.textContent}`;
+            }
+
+            const grid = document.getElementById('articles-grid-all');
+            if (filtered.length === 0) {
+                grid.innerHTML = `<p style="text-align: center; grid-column: 1/-1; color: var(--text-muted); padding: 40px 0;">Artikel tidak ditemukan.</p>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(art => `
+                <article class="article-card reveal revealed">
+                    <div class="article-img-wrap">
+                        <img src="${art.image}" alt="${art.title}">
+                    </div>
+                    <div class="article-card-content">
+                        <div class="article-meta">
+                            <span class="badge badge-primary">${art.category}</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> ${art.date}</span>
+                        </div>
+                        <a href="article.html?id=${art.id}">
+                            <h3 class="article-card-title">${art.title}</h3>
+                        </a>
+                        <p class="article-card-summary">${art.summary}</p>
+                        <div class="article-card-footer">
+                            <span class="article-meta">
+                                <span><i class="fa-solid fa-eye"></i> ${art.views} views</span>
+                            </span>
+                            <a href="article.html?id=${art.id}" class="article-read-more">
+                                Baca Selengkapnya <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            `).join("");
+        });
+    </script>
+</body>
+</html>
