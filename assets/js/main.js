@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loader.style.opacity = "0";
             loader.style.visibility = "hidden";
         });
-        
+
         setTimeout(() => {
             loader.style.opacity = "0";
             loader.style.visibility = "hidden";
@@ -77,111 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4. GOOGLE ANALYTICS INTERACTION TRACKERS
     // ----------------------------------------------------
 
-    // A. Form Kontak Submission via EmailJS
-    const contactForm = document.getElementById("contactForm");
-    const toastSuccess = document.getElementById("toast-success");
-    const toastError = document.getElementById("toast-error");
-    const submitBtn = document.getElementById("contact-submit-btn");
-
-    // Inisialisasi EmailJS dengan Public Key
-    // Gunakan fungsi helper untuk memastikan EmailJS sudah siap sebelum init
-    let emailjsReady = false;
-    function initEmailJS() {
-        if (typeof emailjs !== "undefined" && !emailjsReady) {
-            emailjs.init({ publicKey: "YzDeihn9NVvs0zCSm" });
-            emailjsReady = true;
-            console.log("EmailJS berhasil diinisialisasi.");
-        }
-    }
-    // Coba init langsung
-    initEmailJS();
-    // Jika belum termuat, coba lagi setelah window load
-    window.addEventListener("load", initEmailJS);
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value.trim();
-
-            // Validasi sederhana
-            if (!name || !email || !subject || !message) {
-                alert("Mohon isi semua field yang wajib diisi.");
-                return;
-            }
-
-            // Loading state pada tombol submit
-            if (submitBtn) {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
-            }
-
-            // Pastikan EmailJS sudah diinisialisasi
-            initEmailJS();
-
-            // Kirim email via EmailJS
-            if (typeof emailjs !== "undefined") {
-                emailjs.send("service_qt8mqnt", "template_149bj0d", {
-                    from_name: name,
-                    from_email: email,
-                    subject: subject,
-                    message: message,
-                    to_email: "ridoanugrah2209@gmail.com"
-                }).then(
-                    (response) => {
-                        console.log("Email berhasil terkirim!", response.status, response.text);
-
-                        // Tampilkan toast sukses
-                        if (toastSuccess) {
-                            toastSuccess.classList.add("show");
-                            setTimeout(() => {
-                                toastSuccess.classList.remove("show");
-                            }, 5000);
-                        }
-
-                        // Kirim event ke Google Analytics
-                        if (typeof gtag === "function") {
-                            gtag("event", "contact_form_submit", {
-                                "event_category": "Contact Form",
-                                "event_label": subject,
-                                "user_name_masked": name.substring(0, 3) + "***"
-                            });
-                        }
-
-                        contactForm.reset();
-                    },
-                    (error) => {
-                        console.error("Gagal mengirim email:", error);
-
-                        // Tampilkan toast error dengan detail
-                        if (toastError) {
-                            toastError.classList.add("show");
-                            setTimeout(() => {
-                                toastError.classList.remove("show");
-                            }, 5000);
-                        }
-                    }
-                ).finally(() => {
-                    // Kembalikan tombol ke state semula
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = 'Kirim Pesan <i class="fa-solid fa-paper-plane"></i>';
-                    }
-                });
-            } else {
-                // Fallback jika EmailJS SDK gagal dimuat — gunakan mailto
-                console.warn("EmailJS SDK belum termuat. Menggunakan mailto sebagai fallback.");
-                window.location.href = `mailto:ridoanugrah2209@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Dari: ${name} (${email})\n\n${message}`)}`;
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Kirim Pesan <i class="fa-solid fa-paper-plane"></i>';
-                }
-            }
-        });
-    }
+    // A. [REMOVED] Form kontak telah diganti dengan halaman informasi kontak statis.
+    //    Kode EmailJS tidak lagi diperlukan.
 
     // B. Form Komentar Submission Tracker
     const commentForm = document.getElementById("commentForm");
@@ -226,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // C. Pelacakan klik link sosial media untuk analisis konversi outbound
     const socialLinks = document.querySelectorAll(".social-track");
     socialLinks.forEach(link => {
-        link.addEventListener("click", function() {
+        link.addEventListener("click", function () {
             const platform = this.getAttribute("data-platform");
             if (typeof gtag === "function") {
                 gtag("event", "social_click", {
@@ -265,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----------------------------------------------------
     // 5. CLIENT-SIDE DYNAMIC CONTENT RENDERING (for Static Pages)
     // ----------------------------------------------------
-    
+
     // Pastikan `articles` global dari `articles-data.js` sudah termuat
     const articlesArray = typeof articles !== "undefined" ? Object.values(articles) : [];
 
@@ -289,9 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     </a>
                     <p class="article-card-summary">${art.summary}</p>
                     <div class="article-card-footer">
-                        <span class="article-meta">
-                            <span><i class="fa-solid fa-eye"></i> ${art.views} views</span>
-                        </span>
                         <a href="article.html?id=${art.id}" class="article-read-more">
                             Baca Selengkapnya <i class="fa-solid fa-arrow-right-long"></i>
                         </a>
@@ -307,8 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (blogArticlesGrid && articlesArray.length > 0) {
         const renderBlogArticles = (filterCategory = "all") => {
-            const filtered = filterCategory === "all" 
-                ? articlesArray 
+            const filtered = filterCategory === "all"
+                ? articlesArray
                 : articlesArray.filter(art => art.category_slug === filterCategory);
 
             if (filtered.length === 0) {
@@ -331,9 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </a>
                         <p class="article-card-summary">${art.summary}</p>
                         <div class="article-card-footer">
-                            <span class="article-meta">
-                                <span><i class="fa-solid fa-eye"></i> ${art.views} views</span>
-                            </span>
                             <a href="article.html?id=${art.id}" class="article-read-more">
                                 Baca Selengkapnya <i class="fa-solid fa-arrow-right-long"></i>
                             </a>
@@ -348,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Event listener untuk tombol filter kategori
         categoryBtns.forEach(btn => {
-            btn.addEventListener("click", function() {
+            btn.addEventListener("click", function () {
                 categoryBtns.forEach(b => b.classList.remove("active"));
                 this.classList.add("active");
                 const categorySlug = this.getAttribute("data-category");
@@ -388,7 +279,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             <span><i class="fa-solid fa-user"></i> Oleh: ${article.author}</span>
                             <span><i class="fa-solid fa-calendar-days"></i> ${article.date}</span>
                             <span><i class="fa-solid fa-clock"></i> ${article.read_time}</span>
-                            <span><i class="fa-solid fa-eye"></i> ${article.views + 1} views</span>
                         </div>
                     </div>
                 </header>
