@@ -82,128 +82,107 @@
     <main class="section-padding" style="background-color: var(--bg-primary);">
         <div class="container">
             
-            <div class="section-title-wrap reveal" style="text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="section-title-wrap reveal" style="text-align: center; max-width: 650px; margin-left: auto; margin-right: auto;">
                 <span class="section-subtitle">Get In Touch</span>
                 <h1 class="section-title">Hubungi Saya</h1>
-                <p style="color: var(--text-muted); margin-top: 12px;">
-                    Punya pertanyaan mengenai materi blog, ketertarikan kolaborasi proyek, atau tugas kuliah? Silakan tinggalkan pesan melalui form di bawah ini!
+                <p style="color: var(--text-muted); margin-top: 12px; line-height: 1.7;">
+                    Tertarik berkolaborasi, berdiskusi tentang proyek, atau sekadar ingin menyapa? Silakan hubungi saya melalui channel di bawah ini.
                 </p>
             </div>
 
-            <div class="contact-grid">
-                
-                <!-- KOLOM KIRI: Detail Kontak / Kartu Informasi -->
-                <div class="contact-info-cards reveal">
-                    <!-- Kartu Email -->
-                    <div class="contact-card">
-                        <div class="contact-card-icon">
-                            <i class="fa-regular fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3 class="contact-card-title">E-mail</h3>
-                            <p class="contact-card-content">ridoanugrah2209@gmail.com </p>
-                            <p class="contact-card-content" style="font-size: 0.8rem; margin-top: 4px; color: var(--text-muted);">Fast response di hari kerja.</p>
-                        </div>
-                    </div>
+            <!-- CONTACT CARDS GRID -->
+            <div class="contact-showcase-grid">
 
-                    <!-- Kartu Lokasi -->
-                    <div class="contact-card">
-                        <div class="contact-card-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <h3 class="contact-card-title">Lokasi</h3>
-                            <p class="contact-card-content">Tangerang, Indonesia</p>
-                            <p class="contact-card-content" style="font-size: 0.8rem; margin-top: 4px; color: var(--text-muted);">DKI Jakarta - Daerah Khusus Ibukota.</p>
-                        </div>
+                <!-- Card 1: Email (Featured / Large) -->
+                <div class="contact-showcase-card contact-card-featured reveal">
+                    <div class="contact-showcase-glow"></div>
+                    <div class="contact-showcase-icon-wrap contact-icon-email">
+                        <i class="fa-solid fa-envelope"></i>
                     </div>
+                    <div class="contact-showcase-body">
+                        <h3 class="contact-showcase-label">E-mail</h3>
+                        <p class="contact-showcase-value">ridoanugrah2209@gmail.com</p>
+                        <p class="contact-showcase-hint">Cara terbaik untuk menghubungi saya. Fast response di hari kerja.</p>
+                    </div>
+                    <a href="mailto:ridoanugrah2209@gmail.com" class="contact-showcase-action social-track" data-platform="Email">
+                        Kirim Email <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
 
-                    <!-- Kartu Sosial Media -->
-                    <div class="contact-card" style="flex-direction: column; align-items: flex-start; gap: 12px;">
-                        <h3 class="contact-card-title" style="margin-bottom: 0;"><i class="fa-solid fa-share-nodes" style="color: var(--primary); margin-right: 8px;"></i> Media Sosial</h3>
-                        <p class="contact-card-content">
-                            Hubungi atau ikuti portofolio saya melalui tautan berikut (klik akan dicatat oleh Google Analytics sebagai Outbound Link):
-                        </p>
-                        
-                        <div class="contact-socials-wrap">
-                            <div class="contact-socials">
-                                <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="hero-social-link social-track" data-platform="LinkedIn" aria-label="LinkedIn Profile">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
-                                <a href="https://github.com/doxxy22" target="_blank" class="hero-social-link social-track" data-platform="GitHub" aria-label="GitHub Profile">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <a href="https://instagram.com/angrhrido_" target="_blank" class="hero-social-link social-track" data-platform="Instagram" aria-label="Instagram Profile">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
+                <!-- Card 2: Lokasi -->
+                <div class="contact-showcase-card reveal">
+                    <div class="contact-showcase-icon-wrap contact-icon-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-showcase-body">
+                        <h3 class="contact-showcase-label">Lokasi</h3>
+                        <p class="contact-showcase-value">Tangerang, Indonesia</p>
+                        <p class="contact-showcase-hint">Banten — Area Jabodetabek</p>
                     </div>
                 </div>
 
-                <!-- KOLOM KANAN: Formulir Kontak Modern -->
-                <div class="contact-form-box reveal">
-                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 24px;">Kirimkan Pesan Anda</h3>
-                    
-                    <form id="contactForm">
-                        <!-- Input Nama -->
-                        <div class="form-group">
-                            <label for="name" class="form-label">Nama Lengkap *</label>
-                            <input type="text" id="name" name="from_name" class="form-control" placeholder="Masukkan nama lengkap Anda" required>
-                        </div>
-
-                        <!-- Input Email -->
-                        <div class="form-group">
-                            <label for="email" class="form-label">Alamat E-mail *</label>
-                            <input type="email" id="email" name="from_email" class="form-control" placeholder="nama@email.com" required>
-                        </div>
-
-                        <!-- Input Subjek -->
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subjek / Perihal *</label>
-                            <select id="subject" name="subject" class="form-control" required style="appearance: auto; background: var(--surface);">
-                                <option value="" disabled selected>Pilih perihal pesan...</option>
-                                <option value="Tanya Skripsi">Diskusi Skripsi / Kuliah</option>
-                                <option value="Kerja Sama Web Dev">Penawaran Proyek Frontend</option>
-                                <option value="Desain & Video">Kolaborasi Desain & Video</option>
-                                <option value="Lainnya">Pertanyaan Umum / Lainnya</option>
-                            </select>
-                        </div>
-
-                        <!-- Input Pesan -->
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <label for="message" class="form-label">Pesan Lengkap *</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tuliskan isi pesan Anda secara lengkap..." required></textarea>
-                        </div>
-
-                        <!-- Tombol Submit -->
-                        <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                            Kirim Pesan <i class="fa-solid fa-paper-plane"></i>
-                        </button>
-                    </form>
+                <!-- Card 3: Status -->
+                <div class="contact-showcase-card reveal">
+                    <div class="contact-showcase-icon-wrap contact-icon-status">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="contact-showcase-body">
+                        <h3 class="contact-showcase-label">Status</h3>
+                        <p class="contact-showcase-value">Mahasiswa Semester 8</p>
+                        <p class="contact-showcase-hint">Teknik Informatika — Universitas Pamulang</p>
+                    </div>
                 </div>
 
             </div>
+
+            <!-- SOCIAL MEDIA SECTION -->
+            <div class="contact-social-section reveal">
+                <div class="contact-social-header">
+                    <h2 class="contact-social-title"><i class="fa-solid fa-share-nodes"></i> Temukan Saya di Media Sosial</h2>
+                    <p class="contact-social-desc">Klik salah satu platform di bawah untuk melihat profil dan portofolio saya. Setiap klik otomatis dicatat oleh Google Analytics sebagai outbound link.</p>
+                </div>
+
+                <div class="contact-social-cards">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/rido-anugrah-a694ba335/" target="_blank" class="contact-social-card social-track" data-platform="LinkedIn" id="social-linkedin">
+                        <div class="contact-social-card-icon linkedin-icon">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div class="contact-social-card-info">
+                            <span class="contact-social-card-name">LinkedIn</span>
+                            <span class="contact-social-card-handle">Rido Anugrah</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-social-card-arrow"></i>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/doxxy22" target="_blank" class="contact-social-card social-track" data-platform="GitHub" id="social-github">
+                        <div class="contact-social-card-icon github-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="contact-social-card-info">
+                            <span class="contact-social-card-name">GitHub</span>
+                            <span class="contact-social-card-handle">@doxxy22</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-social-card-arrow"></i>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/angrhrido_" target="_blank" class="contact-social-card social-track" data-platform="Instagram" id="social-instagram">
+                        <div class="contact-social-card-icon instagram-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div class="contact-social-card-info">
+                            <span class="contact-social-card-name">Instagram</span>
+                            <span class="contact-social-card-handle">@angrhrido_</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square contact-social-card-arrow"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </main>
-
-    <!-- TOAST SUCCESS MODAL POPUP -->
-    <div id="toast-success" class="toast-success">
-        <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
-        <div>
-            <strong style="display: block;">Pesan Berhasil Terkirim!</strong>
-            <span style="font-size: 0.85rem; opacity: 0.9;">Pesan telah dikirim ke email Rido. Terima kasih!</span>
-        </div>
-    </div>
-
-    <!-- Toast Error -->
-    <div id="toast-error" class="toast-success" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
-        <i class="fa-solid fa-circle-xmark" style="font-size: 1.3rem;"></i>
-        <div>
-            <strong style="display: block;">Gagal Mengirim Pesan</strong>
-            <span style="font-size: 0.85rem; opacity: 0.9;">Terjadi kesalahan. Silakan coba lagi atau kirim email langsung.</span>
-        </div>
-    </div>
 
     <!-- Section Footer -->
     <footer class="footer">
@@ -226,14 +205,14 @@
                     <ul class="footer-links">
                         <li><a href="index.html" class="footer-link">Home</a></li>
                         <li><a href="about.html" class="footer-link">About</a></li>
-                        <li><a href="blog.html" class="footer-link">Blog & Artikel</a></li>
+                        <li><a href="blog.html" class="footer-link">Blog &amp; Artikel</a></li>
                         <li><a href="contact.html" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Kolom Kontak / Hubungi Rido -->
                 <div>
-                    <h4 class="footer-title">Kontak & Media</h4>
+                    <h4 class="footer-title">Kontak &amp; Media</h4>
                     <ul class="footer-links">
                         <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-envelope" style="width: 20px;"></i> ridoanugrah2209@gmail.com </span></li>
                         <li><span class="footer-link" style="cursor: default;"><i class="fa-solid fa-location-dot" style="width: 20px;"></i> Tangerang, Indonesia</span></li>
@@ -256,13 +235,10 @@
 
             <!-- Footer Bottom / Copyright -->
             <div class="footer-bottom">
-                <p>&copy; 2026 Rido's Creative & Tech Journal. All rights reserved.</p>
+                <p>&copy; 2026 Rido's Creative &amp; Tech Journal. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- Scripts JavaScript -->
     <script src="assets/js/articles-data.js"></script>
