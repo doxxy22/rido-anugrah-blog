@@ -84,19 +84,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const submitBtn = document.getElementById("contact-submit-btn");
 
     // Inisialisasi EmailJS dengan Public Key
-    // PENTING: Ganti 'YOUR_PUBLIC_KEY' dengan Public Key dari akun EmailJS Anda
-    if (typeof emailjs !== "undefined") {
-        emailjs.init({ publicKey: "YzDeihn9NVvs0zCSm" });
+    // Gunakan fungsi helper untuk memastikan EmailJS sudah siap sebelum init
+    let emailjsReady = false;
+    function initEmailJS() {
+        if (typeof emailjs !== "undefined" && !emailjsReady) {
+            emailjs.init({ publicKey: "YzDeihn9NVvs0zCSm" });
+            emailjsReady = true;
+            console.log("EmailJS berhasil diinisialisasi.");
+        }
     }
+    // Coba init langsung
+    initEmailJS();
+    // Jika belum termuat, coba lagi setelah window load
+    window.addEventListener("load", initEmailJS);
 
     if (contactForm) {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
             const subject = document.getElementById("subject").value;
-            const message = document.getElementById("message").value;
+            const message = document.getElementById("message").value.trim();
+
+            // Validasi sederhana
+            if (!name || !email || !subject || !message) {
+                alert("Mohon isi semua field yang wajib diisi.");
+                return;
+            }
 
             // Loading state pada tombol submit
             if (submitBtn) {
@@ -104,8 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
             }
 
+            // Pastikan EmailJS sudah diinisialisasi
+            initEmailJS();
+
             // Kirim email via EmailJS
-            // PENTING: Ganti 'YOUR_SERVICE_ID' dan 'YOUR_TEMPLATE_ID' dengan ID dari akun EmailJS Anda
             if (typeof emailjs !== "undefined") {
                 emailjs.send("service_qt8mqnt", "template_149bj0d", {
                     from_name: name,
@@ -122,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             toastSuccess.classList.add("show");
                             setTimeout(() => {
                                 toastSuccess.classList.remove("show");
-                            }, 4000);
+                            }, 5000);
                         }
 
                         // Kirim event ke Google Analytics
@@ -139,12 +156,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     (error) => {
                         console.error("Gagal mengirim email:", error);
 
-                        // Tampilkan toast error
+                        // Tampilkan toast error dengan detail
                         if (toastError) {
                             toastError.classList.add("show");
                             setTimeout(() => {
                                 toastError.classList.remove("show");
-                            }, 4000);
+                            }, 5000);
                         }
                     }
                 ).finally(() => {
@@ -155,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             } else {
-                // Fallback jika EmailJS tidak termuat
+                // Fallback jika EmailJS SDK gagal dimuat — gunakan mailto
                 console.warn("EmailJS SDK belum termuat. Menggunakan mailto sebagai fallback.");
                 window.location.href = `mailto:ridoanugrah2209@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Dari: ${name} (${email})\n\n${message}`)}`;
                 if (submitBtn) {
@@ -221,10 +238,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // D. Pelacakan klik unduh CV
+    // D. Pelacakan klik unduh CV (Unduh file asli dari assets/cv/)
     const downloadCvBtn = document.getElementById("download-cv-btn");
     if (downloadCvBtn) {
         downloadCvBtn.addEventListener("click", () => {
+            // Kirim event ke Google Analytics terlebih dahulu
             if (typeof gtag === "function") {
                 gtag("event", "file_download", {
                     "event_category": "Interactivity",
@@ -232,7 +250,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     "file_name": "CV_Rido_Anugrah.pdf"
                 });
             }
-            alert("File CV diunduh! (Simulasi file download untuk analisis event Google Analytics)");
+
+            // Trigger download file CV asli
+            const link = document.createElement("a");
+            link.href = "assets/cv/CV_Rido_Anugrah.pdf";
+            link.download = "CV_Rido_Anugrah.pdf";
+            link.target = "_blank";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     }
 
